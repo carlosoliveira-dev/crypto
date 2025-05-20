@@ -10,7 +10,7 @@ app.get("/hello", (req, res) => {
 });
 
 app.post('/cadastrar', (req, res) => {
-  res.send("request recebido!");
+  res.send(req.body);
 })
 
 ViteExpress.listen(app, 3000, () =>
