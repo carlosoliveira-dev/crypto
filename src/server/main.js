@@ -10,7 +10,7 @@ app.get("/hello", (req, res) => {
 });
 
 app.post('/cadastrar', (req, res) => {
-
+  console.log(req.body);
   res.send(req.body);
 })
 
