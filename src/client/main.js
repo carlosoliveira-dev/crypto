@@ -37,3 +37,13 @@ formulario.addEventListener('submit', async (event) => {
     console.log('Servidor respondeu:', resultado);
 
 });
+
+
+const button_lista = document.getElementById('button_lista');
+const div_lista = document.getElementById('div_lista');
+
+button_lista.addEventListener('click', async () => {
+  const resposta = await fetch('http://localhost:3000/listar');
+  const dados = await resposta.json();
+  console.log(dados);
+});
