@@ -8,8 +8,10 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/hello", (req, res) => {
-  res.send("Hello Vite!");
+app.get("/listar", (req, res) => {
+  const select = db.prepare('SELECT * FROM criptomoedas');
+  const moedas = select.all();
+  res.send(moedas);
 });
 
 app.post('/cadastrar', (req, res) => {
