@@ -45,5 +45,11 @@ const div_lista = document.getElementById('div_lista');
 button_lista.addEventListener('click', async () => {
   const resposta = await fetch('http://localhost:3000/listar');
   const dados = await resposta.json();
-  console.log(dados);
+
+  dados.forEach(moeda => {
+  const item = document.createElement('p');
+  item.textContent = `Nome: ${moeda.nome}, contrato: ${moeda.contrato}, corretora: ${moeda.corretora}`;
+  div_lista.appendChild(item);
+  });
+
 });
