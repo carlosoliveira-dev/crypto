@@ -6,11 +6,24 @@ formulario.addEventListener('submit', async (event) => {
     const form = event.target;
     const select = document.getElementById('corretora');
 
-      const dados = {
-      nome: form.nome.value,
-      contrato: form.contrato.value,
-      corretora: select.value
-    };
+    let corretora_selecionada;
+    console.log(corretora_selecionada);
+    switch (select.value) {
+      case '1':
+        corretora_selecionada = 'Binance';
+        break;
+      case '2':
+        corretora_selecionada = 'Gate.io';
+        break;
+      case '3':
+        corretora_selecionada = 'MetaMask';
+        break;
+    }
+
+    const dados = {
+    nome: form.nome.value,
+    contrato: form.contrato.value,
+    corretora: corretora_selecionada};
 
     const resposta = await fetch('http://localhost:3000/cadastrar', {
       method: 'POST',
