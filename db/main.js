@@ -17,6 +17,10 @@ const insert = db.prepare('INSERT INTO criptomoedas (nome, contrato, valor, corr
 insert.run('bitcoin', 'sadfa6d54sa6f', '265000', 'BINANCE');
 insert.run('ethereum', '5sdf4sda6f6d5', '26000', 'GATE.IO');
 
+// Deleta dados na tabela
+const deletar = db.prepare('DELETE FROM criptomoedas WHERE contrato = ?');
+deletar.run('sadfa6d54sa6f');
+
 // Consulta os dados
 const select = db.prepare('SELECT * FROM criptomoedas');
 const usuarios = select.all();
