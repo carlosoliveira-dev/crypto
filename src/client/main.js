@@ -37,6 +37,7 @@ formulario.addEventListener('submit', async (event) => {
 
     const resultado = await resposta.json();
     console.log('Servidor respondeu:', resultado);
+    location.reload();
 
 });
 
