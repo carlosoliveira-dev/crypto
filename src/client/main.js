@@ -43,17 +43,21 @@ formulario.addEventListener('submit', async (event) => {
 
 
 const button_lista = document.getElementById('button_lista');
+let button_lista_clicado = false;
 const div_lista = document.getElementById('div_lista');
 
 button_lista.addEventListener('click', async () => {
-  const resposta = await fetch('http://localhost:3000/listar');
-  const dados = await resposta.json();
+  if (!button_lista_clicado) {
+    const resposta = await fetch('http://localhost:3000/listar');
+    const dados = await resposta.json();
 
-  dados.forEach(moeda => {
-  const item = document.createElement('p');
-  item.textContent = `Nome: ${moeda.nome}, contrato: ${moeda.contrato}, corretora: ${moeda.corretora}`;
-  div_lista.appendChild(item);
-  });
+    dados.forEach(moeda => {
+    const item = document.createElement('p');
+    item.textContent = `Nome: ${moeda.nome}, contrato: ${moeda.contrato}, corretora: ${moeda.corretora}`;
+    div_lista.appendChild(item);
+    });
+    button_lista_clicado = true;
+  }
 
 });
 
