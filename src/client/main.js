@@ -7,8 +7,10 @@ formulario.addEventListener('submit', async (event) => {
     const select = document.getElementById('corretora');
 
     let corretora_selecionada;
-    console.log(corretora_selecionada);
     switch (select.value) {
+      case '':
+        alert('Selecione uma corretora');
+        return 0;
       case '1':
         corretora_selecionada = 'Binance';
         break;
