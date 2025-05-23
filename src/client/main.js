@@ -62,7 +62,7 @@ button_lista.addEventListener('click', async () => {
 });
 
 
-const formulario_excluir = document.getElementById('formulario_excluir')
+const formulario_excluir = document.getElementById('formulario_excluir');
 
 formulario_excluir.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -79,4 +79,11 @@ formulario_excluir.addEventListener('submit', async (event) => {
     });
 
     location.reload();
+});
+
+const button_limpar_lista = document.getElementById('button_limpar_lista');
+
+button_limpar_lista.addEventListener('click', async (event) => {
+  document.getElementById('div_lista').innerHTML = '';
+  button_lista_clicado = false;
 });
