@@ -78,4 +78,5 @@ formulario_excluir.addEventListener('submit', async (event) => {
       },
     });
 
+    location.reload();
 });
