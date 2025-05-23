@@ -55,3 +55,22 @@ button_lista.addEventListener('click', async () => {
   });
 
 });
+
+
+const formulario_excluir = document.getElementById('formulario_excluir')
+
+formulario_excluir.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const form = event.target;
+
+    const contrato = form.contrato_excluir.value;
+
+    const resposta = await fetch('http://localhost:3000/moeda/' + contrato, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+    });
+
+});
