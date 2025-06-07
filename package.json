@@ -1,5 +1,5 @@
 {
-  "name": "crypto",
+  "name": "cryptos",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "nodemon": "^3.1.10",
-    "vite": "^6.3.3"
+    "vite": "^6.3.5"
   },
   "dependencies": {
     "better-sqlite3": "^11.10.0",
