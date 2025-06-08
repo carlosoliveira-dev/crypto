@@ -20,6 +20,10 @@ RUN yarn build
 # Set production environment for runtime only
 ENV NODE_ENV=production
 
+# give permissions to database file
+USER root
+RUN chmod -R 777 /usr/src/app
+
 # Optional: run as non-root
 USER node
 
